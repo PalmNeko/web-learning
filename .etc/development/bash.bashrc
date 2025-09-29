@@ -3,24 +3,27 @@
 # - Makefile から呼び出されることを想定しています
 
 # 環境変数の設定
-if [ -f .etc/.env ]; then
+if [ -f .etc/development/.env ]; then
 	set -a
-	. .etc/.env
+	. .etc/development/.env
 	set +a
 else
-	echo "Error: .etc/.env ファイルが存在していません"
+	echo "Error: .etc/development/.env ファイルが存在していません"
 fi
 
 # PATHとプロンプトの設定
 PATH="$(pwd)/scripts:$PATH"
 PS1='〇'"$PS1"
 
+# 追加の環境変数
+export PROJECTDIR="$(pwd)"
+
 # bashrcの読み込み
 test -f .bashrc && . .bashrc
 
 # ようこそメッセージ
-if [ -f .etc/.welcome_message ]; then
-	cat .etc/.welcome_message
+if [ -f .etc/development/.welcome_message ]; then
+	cat .etc/development/.welcome_message
 	echo
 fi
 

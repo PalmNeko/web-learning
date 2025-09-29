@@ -1,3 +1,3 @@
 #!/bin/bash
 
-exec bash --rcfile ./.etc/bash.bashrc
+exec bash --rcfile ./.etc/development/bash.bashrc
