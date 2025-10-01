@@ -12,7 +12,7 @@ else
 fi
 
 # PATHとプロンプトの設定
-PATH="$(pwd)/scripts:$PATH"
+PATH="$(pwd)/bin:$PATH"
 PS1='〇'"$PS1"
 
 # 追加の環境変数

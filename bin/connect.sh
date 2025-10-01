@@ -40,7 +40,7 @@ ip_search() {
 		set -x
 		logfile="/dev/stderr"
 	fi
-	for i in {2..10}; do
+	for i in {2..255}; do
 		printf '\r%s\n' $i > "$logfile"
 		if nc -w 1 "${IP_ADDRESS_PLACEHOLDER/X/$i}" 22 > "$logfile"; then
 			echo "${IP_ADDRESS_PLACEHOLDER/X/$i}"
